@@ -199,7 +199,7 @@
 
     private string GenerateWoodBarrelDescription(Instruction instruction)
     {
-        return $"Laisser vieillir {instruction.Temps} années en fût {GetTextWithPrefix(instruction.Name)} (soit {instruction.Temps * 20} minutes / {Math.DivRem(instruction.Temps * 20, 60, out var rem)}h{rem.ToString().PadLeft(2, '0')}";
+        return $"Laisser vieillir {instruction.Temps} années en fût {GetTextWithPrefix(instruction.Name)} (soit {instruction.Temps * 20} minutes / {Math.DivRem(instruction.Temps * 20, 60, out var rem)}h{rem.ToString().PadLeft(2, '0')})";
     }
 
     private string GetTextWithPrefix(string text)
