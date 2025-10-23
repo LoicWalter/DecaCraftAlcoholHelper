@@ -173,6 +173,11 @@
                 <Name>Houstonie bleue</Name>
                 <Quantity>4</Quantity>
             </Ingredient>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Sucre</Name>
+                <Quantity>1</Quantity>
+            </Ingredient>
         </Ingredients>
         <Instructions>
             <Instruction>
