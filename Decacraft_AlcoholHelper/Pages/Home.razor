@@ -1,138 +1,168 @@
 ﻿@page "/"
-@using Decacraft_AlcoholHelper.Models
 @using Decacraft_AlcoholHelper.Services
-@inject ReceipiesService ReceipiesService
+@using Decacraft_AlcoholHelper.Models
+@inject RecipesService RecipesService
 
 <PageTitle>Recipe Calculator</PageTitle>
-<MudContainer Style="margin: auto; max-width: 600px; min-height: 100vh; padding-block: 2rem">
+<MudContainer Style="margin: auto; max-width: 800px; min-height: 100vh; padding-block: 2rem">
     <MudText Typo="Typo.h2" Class="mb-4">Calculateur d'ingrédients</MudText>
 
     <MudAutocomplete T="string"
                      Label="Sélectionnez une recette"
                      @bind-Value="SelectedRecipeName"
+                     @bind-Value:after="OnRecipeChanged"
                      SearchFunc="@SearchRecipes"
                      Variant="Variant.Outlined"
                      AdornmentIcon="@Icons.Material.Filled.Search"
                      AdornmentColor="Color.Primary"
                      Immediate="true"
+                     Clearable="true"
                      ResetValueOnEmptyText="true"
                      CoerceText="true"
-                     CoerceValue="true"/>
+                     CoerceValue="true"
+                     SelectValueOnTab="true"/>
 
     <MudNumericField @bind-Value="DesiredQuantity"
+                     @bind-Value:after="OnQuantityChanged"
                      Label="Quantité désirée"
                      Variant="Variant.Outlined"
                      Min="1"
                      Max="9999"
                      Step="3"
-                     Adornment="Adornment.End"
-    />
+                     Adornment="Adornment.End"/>
 
     <MudSwitch @bind-Value="IncludeSubRecipes"
+               @bind-Value:after="OnIncludeSubRecipesChanged"
                Color="Color.Primary"
                Label="Inclure les sous-recettes"
                Class="mt-2"/>
 
-    <MudButton Variant="Variant.Filled"
-               Color="Color.Primary"
-               OnClick="CalculateIngredients"
-               Disabled="@(string.IsNullOrEmpty(SelectedRecipeName))"
-               FullWidth="true"
-               StartIcon="@Icons.Material.Filled.Calculate">
-        Calculer les ingrédients
-    </MudButton>
+    
+@if (OriginalRecipe != null)
+{
+    <MudText Typo="Typo.h5" Class="my-3">
+        Recette: @OriginalRecipe.Name
+    </MudText>
+    <MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-4">
+        Pour produire @DesiredQuantity unité(s), vous devez faire la recette @TimesToMake fois (chaque
+        recette
+        produit 3
+        unités)
+    </MudText>
 
-    @if (!string.IsNullOrEmpty(SelectedRecipeName) && Ingredients.Any())
-    {
-        <MudText Typo="Typo.h5" Class="my-3">
-            Recette: @SelectedRecipeName
-        </MudText>
-        <MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-4">
-            Pour produire @DesiredQuantity unité(s), vous devez faire la recette @TimesToMake fois (chaque recette
-            produit 3
-            unités)
-        </MudText>
+    <MudDivider Class="mb-4"/>
 
-        <MudDivider Class="mb-4"/>
+    <MudText Typo="Typo.h6" Class="mb-3">
+        Ingrédients nécessaires:
+    </MudText>
 
-        <MudText Typo="Typo.h6" Class="mb-3">
-            Ingrédients nécessaires:
-        </MudText>
-
-        <MudList T="string">
-            @foreach (var ingredientGroup in Ingredients.GroupBy(i => i.Type).OrderBy(g => g.Key))
-            {
-                <MudListSubheader>
-                    <MudText Typo="Typo.subtitle1" Color="Color.Primary">
-                        @(ingredientGroup.Key == IngredientType.Item ? "Items" : "Boissons")
-                    </MudText>
-                </MudListSubheader>
-
-                @foreach (var ingredient in ingredientGroup.OrderBy(i => i.Name))
-                {
-                    <MudListItem T="string" Icon="@GetIngredientIcon(ingredient.Type)">
-                        <MudText>
-                            <strong>@ingredient.Name</strong>
-                            <MudChip T="string" Size="Size.Small" Color="Color.Info" Class="ml-2">
-                                x @ingredient.Quantity
-                            </MudChip>
-                        </MudText>
-                    </MudListItem>
-                }
-            }
-        </MudList>
-
-        @if (OriginalRecipe != null)
+    <MudList T="string">
+        @foreach (var ingredientGroup in Ingredients.GroupBy(i => i.Type).OrderBy(g => g.Key))
         {
-            <MudText Typo="Typo.h6" Class="mb-3">
-                Instructions:
-            </MudText>
+            <MudListSubheader>
+                <MudText Typo="Typo.subtitle1" Color="Color.Primary">
+                    @(ingredientGroup.Key == IngredientType.Item ? "Items" : "Boissons")
+                </MudText>
+            </MudListSubheader>
 
-            <MudTimeline TimelineOrientation="TimelineOrientation.Vertical">
-                @foreach (var instruction in OriginalRecipe.InstructionList)
+            @foreach (var ingredient in ingredientGroup.OrderBy(i => i.Name))
+            {
+                <MudListItem T="string" Icon="@ingredient.GetIngredientIcon()">
+                    <MudText>
+                        <strong>@ingredient.Name</strong>
+                        <MudChip T="string" Size="Size.Small" Color="Color.Info" Class="ml-2">
+                            x @ingredient.Quantity @ingredient.GetStackText()
+                        </MudChip>
+                    </MudText>
+                </MudListItem>
+            }
+        }
+    </MudList>
+
+    <MudDivider Class="my-4"/>
+    @if (OriginalRecipe != null)
+    {
+        <MudText Typo="Typo.h6" Class="mb-3">
+            Instructions:
+        </MudText>
+
+        <MudTimeline TimelineOrientation="TimelineOrientation.Vertical" TimelinePosition="TimelinePosition.Left">
+            @foreach (var kvp in OriginalRecipe.GetInstructionsByRecipeName(IncludeSubRecipes))
+            {
+                <MudTimelineItem Color="Color.Primary" Size="Size.Medium">
+                    <ItemContent>
+                        <MudText Typo="Typo.h6" Style="font-weight: bold; text-decoration: underline;">
+                            Recette: @kvp.Key
+                        </MudText>
+                    </ItemContent>
+                </MudTimelineItem>
+                foreach (var instruction in kvp.Value)
                 {
-                    <MudTimelineItem Color="@GetInstructionColor(instruction.Type)" Size="Size.Small">
+                    <MudTimelineItem Color="@instruction.GetInstructionColor()" Size="Size.Small">
                         <ItemContent>
-
-                            @{
-                                var instruction1 = instruction;
-                            }
                             <MudText Typo="Typo.body1">
-                                <strong>@GetInstructionTitle(instruction1)</strong>
+                                <strong>@instruction.GetInstructionTitle()</strong>
                             </MudText>
                             <MudText Typo="Typo.body2" Color="Color.Secondary">
-                                @GetInstructionDescription(instruction)
+                                @instruction.GetInstructionDescription(kvp.Key)
                             </MudText>
                         </ItemContent>
                     </MudTimelineItem>
                 }
-            </MudTimeline>
-        }
+
+                <MudTimelineItem Color="Color.Success" Size="Size.Small">
+                    <ItemContent>
+                        <MudText Typo="Typo.body1" Style="font-weight: bold; text-decoration: underline;">
+                            Scellez les bouteilles !
+                        </MudText>
+                    </ItemContent>
+                </MudTimelineItem>
+            }
+        </MudTimeline>
     }
-    else if (HasCalculated && !Ingredients.Any())
-    {
-        <MudAlert Severity="Severity.Warning">
-            Aucun ingrédient trouvé pour cette recette.
-        </MudAlert>
-    }
+}
+else if (HasCalculated && !Ingredients.Any())
+{
+    <MudAlert Severity="Severity.Warning">
+        Aucun ingrédient trouvé pour cette recette.
+    </MudAlert>
+}
 </MudContainer>
 
 @code {
-    private List<string> _allRecipeNames = new List<string>();
-
+    private List<string> _allRecipeNames = [];
     private string SelectedRecipeName { get; set; } = string.Empty;
     private int DesiredQuantity { get; set; } = 3;
     private bool IncludeSubRecipes { get; set; } = true;
-
-    private List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
-    private Receipy? OriginalRecipe { get; set; }
+    
+    private List<Ingredient> Ingredients { get; set; } = [];
+    private Recipe? OriginalRecipe { get; set; }
     private int TimesToMake { get; set; }
     private bool HasCalculated { get; set; }
 
+    private void OnRecipeChanged()
+    {
+        if (string.IsNullOrEmpty(SelectedRecipeName) || !RecipesService.TryGetRecipeByName(SelectedRecipeName, out _))
+        {
+            return;
+        }
+        CalculateIngredients();
+    }
+
+    private void OnQuantityChanged()
+    {
+        CalculateIngredients();
+    }
+
+    private void OnIncludeSubRecipesChanged()
+    {
+        CalculateIngredients();
+    }
+    
     protected override async Task OnInitializedAsync()
     {
-        await ReceipiesService.InitializeAsync();
-        _allRecipeNames = ReceipiesService.GetAllReceipies()
+        await RecipesService.InitializeAsync();
+        _allRecipeNames = RecipesService.GetAllRecipes()
             .Select(r => r.Name)
             .OrderBy(n => n)
             .ToList();
@@ -140,13 +170,14 @@
 
     private Task<IEnumerable<string>> SearchRecipes(string value, CancellationToken token)
     {
-        if
-            (string.IsNullOrEmpty(value))
-            return Task.FromResult(_allRecipeNames.AsEnumerable());
-
-        return Task.FromResult(
-            _allRecipeNames.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase))
-        );
+        return Task.FromResult(string.IsNullOrEmpty(value) ? _allRecipeNames.AsEnumerable() : _allRecipeNames.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase)));
+    }
+    
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        Console.WriteLine($"Parameters set: Recipe={SelectedRecipeName}, Quantity={DesiredQuantity}, IncludeSubRecipes={IncludeSubRecipes}");
+        CalculateIngredients();
     }
 
     private void CalculateIngredients()
@@ -156,69 +187,16 @@
 
         try
         {
-            Ingredients = ReceipiesService.GetIngredientsForReceipy(SelectedRecipeName, DesiredQuantity, IncludeSubRecipes);
-            OriginalRecipe = ReceipiesService.GetReceipyByName(SelectedRecipeName);
+            Ingredients = RecipesService.GetIngredientsForRecipe(SelectedRecipeName, DesiredQuantity, IncludeSubRecipes);
+            OriginalRecipe = RecipesService.GetRecipeByName(SelectedRecipeName);
             TimesToMake = (int)Math.Ceiling(DesiredQuantity / 3.0);
             HasCalculated = true;
         }
         catch (Exception)
         {
-            Ingredients = new List<Ingredient>();
+            Ingredients = [];
             OriginalRecipe = null;
             HasCalculated = true;
         }
     }
-
-    private string GetIngredientIcon(IngredientType type)
-    {
-        return type == IngredientType.Item
-            ? Icons.Material.Filled.Inventory
-            : Icons.Material.Filled.LocalBar;
-    }
-
-    private string GetInstructionTitle(Instruction instruction)
-    {
-        return instruction.Type switch
-        {
-            InstructionType.Chaudron => "Chaudron",
-            InstructionType.Alambic => "Alambic",
-            InstructionType.Barrel => "Fût en " + instruction.Name,
-            _ => instruction.Type.ToString()
-        };
-    }
-
-    private string GetInstructionDescription(Instruction instruction)
-    {
-        return instruction.Type switch
-        {
-            InstructionType.Chaudron => $"Laisser mijoter {instruction.Temps} minutes",
-            InstructionType.Alambic => $"Distiller pendant {instruction.Temps} secondes",
-            _ => GenerateWoodBarrelDescription(instruction)
-        };
-    }
-
-    private string GenerateWoodBarrelDescription(Instruction instruction)
-    {
-        return $"Laisser vieillir {instruction.Temps} années en fût {GetTextWithPrefix(instruction.Name)} (soit {instruction.Temps * 20} minutes / {Math.DivRem(instruction.Temps * 20, 60, out var rem)}h{rem.ToString().PadLeft(2, '0')})";
-    }
-
-    private string GetTextWithPrefix(string text)
-    {
-        if (string.IsNullOrEmpty(text))
-            return text;
-
-        var firstChar = char.ToLower(text[0]);
-        return "aeiouyh".Contains(firstChar) ? "d'" + text : "de " + text;
-    }
-
-    private Color GetInstructionColor(InstructionType type)
-    {
-        return type switch
-        {
-            InstructionType.Chaudron => Color.Error,
-            InstructionType.Alambic => Color.Info,
-            _ => Color.Warning
-        };
-    }
-
 }

@@ -13,7 +13,14 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Folder Include="Components\" />
         <Folder Include="wwwroot\Data" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="wwwroot\Data\Recipes.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

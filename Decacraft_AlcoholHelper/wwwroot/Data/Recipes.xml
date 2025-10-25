@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Receipies>
-    <Receipy>
+<Recipes>
+    <Recipe>
         <Name>Infusion cerise</Name>
         <Ingredients>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Feuilles de cerisier</Name>
+                <StackSize>64</StackSize>
                 <Quantity>2</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Fiole de miel</Name>
+                <StackSize>16</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
         </Ingredients>
@@ -20,18 +22,20 @@
                 <Temps>5</Temps>
             </Instruction>
         </Instructions>
-    </Receipy>
-    <Receipy>
+    </Recipe>
+    <Recipe>
         <Name>Jus de pommes</Name>
         <Ingredients>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Pomme</Name>
+                <StackSize>64</StackSize>
                 <Quantity>3</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Sucre</Name>
+                <StackSize>64</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
         </Ingredients>
@@ -45,28 +49,32 @@
                 <Temps>15</Temps>
             </Instruction>
         </Instructions>
-    </Receipy>
-    <Receipy>
+    </Recipe>
+    <Recipe>
         <Name>Multifruits</Name>
         <Ingredients>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Pomme</Name>
+                <StackSize>64</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Carotte</Name>
+                <StackSize>64</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Pastèque</Name>
+                <StackSize>64</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Baie</Name>
+                <StackSize>64</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
         </Ingredients>
@@ -81,13 +89,14 @@
                 <Temps>2</Temps>
             </Instruction>
         </Instructions>
-    </Receipy>
-    <Receipy>
+    </Recipe>
+    <Recipe>
         <Name>Café</Name>
         <Ingredients>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Cacao</Name>
+                <StackSize>64</StackSize>
                 <Quantity>12</Quantity>
             </Ingredient>
         </Ingredients>
@@ -102,23 +111,26 @@
                 <Temps>1</Temps>
             </Instruction>
         </Instructions>
-    </Receipy>
-    <Receipy>
+    </Recipe>
+    <Recipe>
         <Name>Kombucha</Name>
         <Ingredients>
             <Ingredient>
                 <Type>Boisson</Type>
                 <Name>Infusion cerise</Name>
+                <StackSize>1</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Fiole de miel</Name>
+                <StackSize>16</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Baie</Name>
+                <StackSize>64</StackSize>
                 <Quantity>2</Quantity>
             </Ingredient>
         </Ingredients>
@@ -133,18 +145,20 @@
                 <Temps>3</Temps>
             </Instruction>
         </Instructions>
-    </Receipy>
-    <Receipy>
+    </Recipe>
+    <Recipe>
         <Name>Cidre de pommes</Name>
         <Ingredients>
             <Ingredient>
                 <Type>Boisson</Type>
                 <Name>Jus de pommes</Name>
+                <StackSize>1</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Sucre</Name>
+                <StackSize>64</StackSize>
                 <Quantity>2</Quantity>
             </Ingredient>
         </Ingredients>
@@ -159,23 +173,26 @@
                 <Temps>4</Temps>
             </Instruction>
         </Instructions>
-    </Receipy>
-    <Receipy>
+    </Recipe>
+    <Recipe>
         <Name>Bière</Name>
         <Ingredients>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Blé</Name>
+                <StackSize>64</StackSize>
                 <Quantity>5</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Houstonie bleue</Name>
+                <StackSize>64</StackSize>
                 <Quantity>4</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Sucre</Name>
+                <StackSize>64</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
         </Ingredients>
@@ -190,23 +207,26 @@
                 <Temps>6</Temps>
             </Instruction>
         </Instructions>
-    </Receipy>
-    <Receipy>
+    </Recipe>
+    <Recipe>
         <Name>Hydromel</Name>
         <Ingredients>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Fiole de miel</Name>
+                <StackSize>16</StackSize>
                 <Quantity>5</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Pissenlit</Name>
+                <StackSize>64</StackSize>
                 <Quantity>2</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Lingot d'or</Name>
+                <StackSize>64</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
         </Ingredients>
@@ -221,23 +241,26 @@
                 <Temps>8</Temps>
             </Instruction>
         </Instructions>
-    </Receipy>
-    <Receipy>
+    </Recipe>
+    <Recipe>
         <Name>Vin</Name>
         <Ingredients>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Baie</Name>
+                <StackSize>64</StackSize>
                 <Quantity>16</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Membrane</Name>
+                <StackSize>64</StackSize>
                 <Quantity>5</Quantity>
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
                 <Name>Sucre</Name>
+                <StackSize>64</StackSize>
                 <Quantity>1</Quantity>
             </Ingredient>
         </Ingredients>
@@ -252,5 +275,67 @@
                 <Temps>9</Temps>
             </Instruction>
         </Instructions>
-    </Receipy>
-</Receipies>
+    </Recipe>
+    <Recipe>
+        <Name>Champagne</Name>
+        <Ingredients>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Baie Lumineuse</Name>
+                <StackSize>64</StackSize>
+                <Quantity>12</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Bloc d'or</Name>
+                <StackSize>64</StackSize>
+                <Quantity>1</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Instruction>
+                <Type>Chaudron</Type>
+                <Temps>3</Temps>
+            </Instruction>
+            <Instruction>
+                <Type>Barrel</Type>
+                <Name>Acacia</Name>
+                <Temps>11</Temps>
+            </Instruction>
+        </Instructions>
+    </Recipe>
+    <Recipe>
+        <Name>Saké</Name>
+        <Ingredients>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Graine de citrouille</Name>
+                <StackSize>64</StackSize>
+                <Quantity>5</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Graine de torche-fleur</Name>
+                <StackSize>64</StackSize>
+                <Quantity>2</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Algue séchée</Name>
+                <StackSize>64</StackSize>
+                <Quantity>2</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Instruction>
+                <Type>Chaudron</Type>
+                <Temps>6</Temps>
+            </Instruction>
+            <Instruction>
+                <Type>Barrel</Type>
+                <Name>Bambou</Name>
+                <Temps>11</Temps>
+            </Instruction>
+        </Instructions>
+    </Recipe>
+</Recipes>
