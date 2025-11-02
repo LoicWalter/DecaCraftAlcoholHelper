@@ -41,7 +41,7 @@ namespace Decacraft_AlcoholHelper.Models;
             return Type switch
             {
                 InstructionType.Chaudron => GenerateCauldronDescription(recipeName),
-                InstructionType.Alambic => $"Distiller pendant {Temps} secondes",
+                InstructionType.Alambic => $"Distiller pendant {Temps} secondes. Soit {Temps / 15} cycles de distillation.",
                 _ => GenerateWoodBarrelDescription()
             };
         }

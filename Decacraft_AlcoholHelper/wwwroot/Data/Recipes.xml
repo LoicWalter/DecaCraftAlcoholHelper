@@ -338,4 +338,48 @@
             </Instruction>
         </Instructions>
     </Recipe>
+    <Recipe>
+        <Name>Gentiane</Name>
+        <Ingredients>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Pissenlit</Name>
+                <StackSize>64</StackSize>
+                <Quantity>9</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Graine de planturne</Name>
+                <StackSize>64</StackSize>
+                <Quantity>2</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Racines suspendues</Name>
+                <StackSize>64</StackSize>
+                <Quantity>5</Quantity>
+            </Ingredient>
+            <Ingredient>
+                <Type>Item</Type>
+                <Name>Arbuste mort</Name>
+                <StackSize>64</StackSize>
+                <Quantity>3</Quantity>
+            </Ingredient>
+        </Ingredients>
+        <Instructions>
+            <Instruction>
+                <Type>Chaudron</Type>
+                <Temps>5</Temps>
+            </Instruction>
+            <Instruction>
+                <Type>Alambic</Type>
+                <Temps>30</Temps>
+            </Instruction>
+            <Instruction>
+                <Type>Barrel</Type>
+                <Name>Chêne noir</Name>
+                <Temps>9</Temps>
+            </Instruction>
+        </Instructions>
+    </Recipe>
 </Recipes>
