@@ -355,7 +355,7 @@
             </Ingredient>
             <Ingredient>
                 <Type>Item</Type>
-                <Name>Racines suspendues</Name>
+                <Name>Racine suspendue</Name>
                 <StackSize>64</StackSize>
                 <Quantity>5</Quantity>
             </Ingredient>
