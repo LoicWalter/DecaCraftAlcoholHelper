@@ -32,7 +32,7 @@ public class RecipesService(HttpClient httpClient)
 
     public static List<Recipe> GetAllRecipes()
     {
-        return Recipes.RecipeList;
+        return Recipes.RecipeList.OrderBy(x => x.Id).ToList();
     }
 
     /// <summary>

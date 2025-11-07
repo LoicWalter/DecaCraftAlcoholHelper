@@ -5,7 +5,9 @@ namespace Decacraft_AlcoholHelper.Models;
 
 public class Recipe
 {
-    [XmlElement("Name")] public string Name { get; set; } = string.Empty;
+    [XmlAttribute("Id")] public int Id { get; set; }
+    [XmlAttribute("Name")] public string Name { get; set; } = string.Empty;
+    [XmlAttribute("Value")] public int Value { get; set; }
 
     [XmlArray("Ingredients")]
     [XmlArrayItem("Ingredient")]

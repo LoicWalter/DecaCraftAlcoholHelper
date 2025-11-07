@@ -5,17 +5,17 @@ namespace Decacraft_AlcoholHelper.Models;
 
     public class Ingredient
     {
-        [XmlElement("Type")]
+        [XmlAttribute("Type")]
         public IngredientType Type { get; set; }
 
-        [XmlElement("Name")]
+        [XmlAttribute("Name")]
         public string Name { get; set; } = string.Empty;
 
-        [XmlElement("StackSize")]
+        [XmlAttribute("StackSize")]
         public int StackSize { get; set; }
         
         
-        [XmlElement("Quantity")]
+        [XmlAttribute("Quantity")]
         public int Quantity { get; set; }
         
         public string GetStackText()

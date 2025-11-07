@@ -6,14 +6,17 @@ namespace Decacraft_AlcoholHelper.Models;
 
     public class Instruction
     {
-        [XmlElement("Name")]
+        [XmlAttribute("Name")]
         public string Name { get; set; } = string.Empty;
         
-        [XmlElement("Type")]
+        [XmlAttribute("Type")]
         public InstructionType Type { get; set; }
 
-        [XmlElement("Temps")]
-        public int Temps { get; set; }
+        [XmlAttribute("Time")]
+        public int Time { get; set; }
+        
+        [XmlAttribute("NumberOfCycles")]
+        public int NumberOfCycles { get; set; }
         
         public Color GetInstructionColor()
         {
@@ -21,7 +24,8 @@ namespace Decacraft_AlcoholHelper.Models;
             {
                 InstructionType.Chaudron => Color.Error,
                 InstructionType.Alambic => Color.Info,
-                _ => Color.Warning
+                InstructionType.Barrel => Color.Warning,
+                _ => Color.Default
             };
         }
         
@@ -41,29 +45,31 @@ namespace Decacraft_AlcoholHelper.Models;
             return Type switch
             {
                 InstructionType.Chaudron => GenerateCauldronDescription(recipeName),
-                InstructionType.Alambic => $"Distiller pendant {Temps} secondes. Soit {Temps / 15} cycles de distillation.",
-                _ => GenerateWoodBarrelDescription()
+                InstructionType.Alambic => GenerateAlambicDescription(),
+                InstructionType.Barrel => GenerateWoodBarrelDescription(),
+                _ => string.Empty
             };
         }
 
         private string GenerateCauldronDescription(string recipeName)
         {
             var recipe = RecipesService.GetRecipeByName(recipeName);
-            var description = $"Laisser mijoter {Temps} minutes.";
+            var description = $"Laisser mijoter {Time} minutes.";
 
             description += " Ingrédients nécessaires :";
-            foreach (var ingredient in recipe.IngredientList)
-            {
-                description += $" {ingredient.Name} x{ingredient.Quantity},";
-            }
-            description = description.TrimEnd(',');
+            description = recipe.IngredientList.Aggregate(description, (current, ingredient) => current + $" {ingredient.Name} x{ingredient.Quantity},").TrimEnd(',');
             
             return description;
+        }
+        
+        private string GenerateAlambicDescription()
+        {
+            return $"Distiller {NumberOfCycles} fois pendant {Time} secondes. Soit {NumberOfCycles * Time} secondes au total.";
         }
 
         private string GenerateWoodBarrelDescription()
         {
-            return $"Laisser vieillir {Temps} années en fût {GetTextWithPrefix(Name)} (soit {Temps * 20} minutes / {Math.DivRem(Temps * 20, 60, out var rem)}h{rem.ToString().PadLeft(2, '0')})";
+            return $"Laisser vieillir {Time} années en fût {GetTextWithPrefix(Name)} (soit {Time * 20} minutes / {Math.DivRem(Time * 20, 60, out var rem)}h{rem.ToString().PadLeft(2, '0')})";
         }
         
         private string GetTextWithPrefix(string text)

@@ -78,6 +78,13 @@
             }
         }
     </MudList>
+    
+    <MudText Typo="Typo.h5" Class="my-3">
+        Revenus estimés: 
+    </MudText>
+    <MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-4">
+        Le prix unitaire d'une bouteille est de @OriginalRecipe.Value Đ. Pour @DesiredQuantity unité(s), le revenu total estimé est de @(OriginalRecipe.Value * DesiredQuantity) Đ.
+    </MudText>
 
     <MudDivider Class="my-4"/>
     @if (OriginalRecipe != null)
@@ -164,7 +171,6 @@ else if (HasCalculated && !Ingredients.Any())
         await RecipesService.InitializeAsync();
         _allRecipeNames = RecipesService.GetAllRecipes()
             .Select(r => r.Name)
-            .OrderBy(n => n)
             .ToList();
     }
 
