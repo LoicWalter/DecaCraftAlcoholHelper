@@ -9,7 +9,7 @@
             <Instruction Type="Chaudron" Time="5" />
         </Instructions>
     </Recipe>
-    <Recipe Id="2" Name="Jus de pommes" Value="0">
+    <Recipe Id="2" Name="Jus de pommes" Value="40">
         <Ingredients>
             <Ingredient Type="Item" Name="Pomme" StackSize="64" Quantity="3" />
             <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="1" />
@@ -19,7 +19,7 @@
             <Instruction Type="Alambic" Time="15" NumberOfCycles="1" />
         </Instructions>
     </Recipe>
-    <Recipe Id="3" Name="Multifruits" Value="0">
+    <Recipe Id="3" Name="Multifruits" Value="40">
         <Ingredients>
             <Ingredient Type="Item" Name="Pomme" StackSize="64" Quantity="1" />
             <Ingredient Type="Item" Name="Carotte" StackSize="64" Quantity="1" />
@@ -31,7 +31,7 @@
             <Instruction Type="Barrel" Name="Bouleau" Time="2" />
         </Instructions>
     </Recipe>
-    <Recipe Id="4" Name="Café" Value="0">
+    <Recipe Id="4" Name="Café" Value="50">
         <Ingredients>
             <Ingredient Type="Item" Name="Cacao" StackSize="64" Quantity="12" />
         </Ingredients>
@@ -40,7 +40,7 @@
             <Instruction Type="Barrel" Name="Chêne" Time="1" />
         </Instructions>
     </Recipe>
-    <Recipe Id="5" Name="Kombucha" Value="0">
+    <Recipe Id="5" Name="Kombucha" Value="170">
         <Ingredients>
             <Ingredient Type="Boisson" Name="Infusion cerise" StackSize="1" Quantity="1" />
             <Ingredient Type="Item" Name="Fiole de miel" StackSize="16" Quantity="1" />
@@ -51,7 +51,7 @@
             <Instruction Type="Barrel" Name="Chêne noir" Time="3" />
         </Instructions>
     </Recipe>
-    <Recipe Id="6" Name="Cidre de pommes" Value="0">
+    <Recipe Id="6" Name="Cidre de pommes" Value="240">
         <Ingredients>
             <Ingredient Type="Boisson" Name="Jus de pommes" StackSize="1" Quantity="1" />
             <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="2" />
@@ -61,7 +61,7 @@
             <Instruction Type="Barrel" Name="Bouleau" Time="4" />
         </Instructions>
     </Recipe>
-    <Recipe Id="7" Name="Bière" Value="0">
+    <Recipe Id="7" Name="Bière" Value="345">
         <Ingredients>
             <Ingredient Type="Item" Name="Blé" StackSize="64" Quantity="5" />
             <Ingredient Type="Item" Name="Houstonie bleue" StackSize="64" Quantity="4" />
@@ -72,7 +72,7 @@
             <Instruction Type="Barrel" Name="Acacia" Time="6" />
         </Instructions>
     </Recipe>
-    <Recipe Id="8" Name="Hydromel" Value="0">
+    <Recipe Id="8" Name="Hydromel" Value="450">
         <Ingredients>
             <Ingredient Type="Item" Name="Fiole de miel" StackSize="16" Quantity="5" />
             <Ingredient Type="Item" Name="Pissenlit" StackSize="64" Quantity="2" />
@@ -83,7 +83,7 @@
             <Instruction Type="Barrel" Name="Acajou" Time="8" />
         </Instructions>
     </Recipe>
-    <Recipe Id="9" Name="Vin" Value="0">
+    <Recipe Id="9" Name="Vin" Value="505">
         <Ingredients>
             <Ingredient Type="Item" Name="Baie" StackSize="64" Quantity="16" />
             <Ingredient Type="Item" Name="Membrane" StackSize="64" Quantity="5" />
@@ -94,7 +94,7 @@
             <Instruction Type="Barrel" Name="Bouleau" Time="9" />
         </Instructions>
     </Recipe>
-    <Recipe Id="10" Name="Champagne" Value="0">
+    <Recipe Id="10" Name="Champagne" Value="615">
         <Ingredients>
             <Ingredient Type="Item" Name="Baie Lumineuse" StackSize="64" Quantity="12" />
             <Ingredient Type="Item" Name="Bloc d'or" StackSize="64" Quantity="1" />
@@ -104,7 +104,7 @@
             <Instruction Type="Barrel" Name="Acacia" Time="11" />
         </Instructions>
     </Recipe>
-    <Recipe Id="11" Name="Saké" Value="0">
+    <Recipe Id="11" Name="Saké" Value="620">
         <Ingredients>
             <Ingredient Type="Item" Name="Graine de citrouille" StackSize="64" Quantity="5" />
             <Ingredient Type="Item" Name="Graine de torche-fleur" StackSize="64" Quantity="2" />
@@ -115,7 +115,7 @@
             <Instruction Type="Barrel" Name="Bambou" Time="11" />
         </Instructions>
     </Recipe>
-    <Recipe Id="12" Name="Gentiane" Value="0">
+    <Recipe Id="12" Name="Gentiane" Value="510">
         <Ingredients>
             <Ingredient Type="Item" Name="Pissenlit" StackSize="64" Quantity="9" />
             <Ingredient Type="Item" Name="Gousse de planturne" StackSize="64" Quantity="2" />
@@ -128,7 +128,7 @@
             <Instruction Type="Barrel" Name="Chêne noir" Time="9" />
         </Instructions>
     </Recipe>
-    <Recipe Id="13" Name="Pastis" Value="0">
+    <Recipe Id="13" Name="Pastis" Value="570">
         <Ingredients>
             <Ingredient Type="Item" Name="Tournesol" StackSize="64" Quantity="17" />
             <Ingredient Type="Item" Name="Feuilles de sapin" StackSize="64" Quantity="2" />
