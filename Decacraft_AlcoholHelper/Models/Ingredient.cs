@@ -31,9 +31,12 @@ namespace Decacraft_AlcoholHelper.Models;
         
         public string GetIngredientIcon()
         {
-            return Type == IngredientType.Item
-                ? Icons.Material.Filled.Inventory
-                : Icons.Material.Filled.LocalBar;
+            return Type switch
+            {
+                IngredientType.Item => Icons.Material.Filled.Inventory,
+                IngredientType.Boisson => Icons.Material.Filled.LocalBar,
+                _ => Icons.Material.Filled.Help
+            };
         }
     }
 

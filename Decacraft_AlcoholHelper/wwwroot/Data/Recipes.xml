@@ -140,4 +140,19 @@
             <Instruction Type="Barrel" Name="Palétuvier" Time="10" />
         </Instructions>
     </Recipe>
+    <Recipe Id="14" Name="Chartreuse" Value="1000">
+        <Ingredients>
+            <Ingredient Type="Item" Name="Coquelicot" StackSize="64" Quantity="2" />
+            <Ingredient Type="Item" Name="Orchidée" StackSize="64" Quantity="3" />
+            <Ingredient Type="Item" Name="Lila" StackSize="64" Quantity="2" />
+            <Ingredient Type="Item" Name="Pâquerette" StackSize="64" Quantity="1" />
+            <Ingredient Type="Item" Name="alliums" StackSize="64" Quantity="3" />
+            <Ingredient Type="Item" Name="Planturne" StackSize="64" Quantity="3" />
+        </Ingredients>
+        <Instructions>
+            <Instruction Type="Chaudron" Time="7" />
+            <Instruction Type="Alambic" Time="30" NumberOfCycles="3" />
+            <Instruction Type="Barrel" Name="Chêne" Time="13" />
+        </Instructions>
+    </Recipe>
 </Recipes>

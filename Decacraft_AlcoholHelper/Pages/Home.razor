@@ -20,7 +20,9 @@
                      ResetValueOnEmptyText="true"
                      CoerceText="true"
                      CoerceValue="true"
-                     SelectValueOnTab="true"/>
+                     SelectValueOnTab="true"
+                     MaxItems="null"
+    />
 
     <MudNumericField @bind-Value="DesiredQuantity"
                      @bind-Value:after="OnQuantityChanged"
@@ -29,111 +31,114 @@
                      Min="1"
                      Max="9999"
                      Step="3"
-                     Adornment="Adornment.End"/>
+                     Adornment="Adornment.End"
+    />
 
     <MudSwitch @bind-Value="IncludeSubRecipes"
                @bind-Value:after="OnIncludeSubRecipesChanged"
                Color="Color.Primary"
                Label="Inclure les sous-recettes"
-               Class="mt-2"/>
+               Class="mt-2"
+    />
 
-    
-@if (OriginalRecipe != null)
-{
-    <MudText Typo="Typo.h5" Class="my-3">
-        Recette: @OriginalRecipe.Name
-    </MudText>
-    <MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-4">
-        Pour produire @DesiredQuantity unité(s), vous devez faire la recette @TimesToMake fois (chaque
-        recette
-        produit 3
-        unités)
-    </MudText>
 
-    <MudDivider Class="mb-4"/>
-
-    <MudText Typo="Typo.h6" Class="mb-3">
-        Ingrédients nécessaires:
-    </MudText>
-
-    <MudList T="string">
-        @foreach (var ingredientGroup in Ingredients.GroupBy(i => i.Type).OrderBy(g => g.Key))
-        {
-            <MudListSubheader>
-                <MudText Typo="Typo.subtitle1" Color="Color.Primary">
-                    @(ingredientGroup.Key == IngredientType.Item ? "Items" : "Boissons")
-                </MudText>
-            </MudListSubheader>
-
-            @foreach (var ingredient in ingredientGroup.OrderBy(i => i.Name))
-            {
-                <MudListItem T="string" Icon="@ingredient.GetIngredientIcon()">
-                    <MudText>
-                        <strong>@ingredient.Name</strong>
-                        <MudChip T="string" Size="Size.Small" Color="Color.Info" Class="ml-2">
-                            x @ingredient.Quantity @ingredient.GetStackText()
-                        </MudChip>
-                    </MudText>
-                </MudListItem>
-            }
-        }
-    </MudList>
-    
-    <MudText Typo="Typo.h5" Class="my-3">
-        Revenus estimés: 
-    </MudText>
-    <MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-4">
-        Le prix unitaire d'une bouteille est de @OriginalRecipe.Value Đ. Pour @DesiredQuantity unité(s), le revenu total estimé est de @(OriginalRecipe.Value * DesiredQuantity) Đ.
-    </MudText>
-
-    <MudDivider Class="my-4"/>
     @if (OriginalRecipe != null)
     {
-        <MudText Typo="Typo.h6" Class="mb-3">
-            Instructions:
+        <MudText Typo="Typo.h5" Class="my-3">
+            Recette: @OriginalRecipe.Name
+        </MudText>
+        <MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-4">
+            Pour produire @DesiredQuantity unité(s), vous devez faire la recette @TimesToMake fois (chaque
+            recette
+            produit 3
+            unités)
         </MudText>
 
-        <MudTimeline TimelineOrientation="TimelineOrientation.Vertical" TimelinePosition="TimelinePosition.Left">
-            @foreach (var kvp in OriginalRecipe.GetInstructionsByRecipeName(IncludeSubRecipes))
+        <MudDivider Class="mb-4"/>
+
+        <MudText Typo="Typo.h6" Class="mb-3">
+            Ingrédients nécessaires:
+        </MudText>
+
+        <MudList T="string">
+            @foreach (var ingredientGroup in Ingredients.GroupBy(i => i.Type).OrderBy(g => g.Key))
             {
-                <MudTimelineItem Color="Color.Primary" Size="Size.Medium">
-                    <ItemContent>
-                        <MudText Typo="Typo.h6" Style="font-weight: bold; text-decoration: underline;">
-                            Recette: @kvp.Key
-                        </MudText>
-                    </ItemContent>
-                </MudTimelineItem>
-                foreach (var instruction in kvp.Value)
+                <MudListSubheader>
+                    <MudText Typo="Typo.subtitle1" Color="Color.Primary">
+                        @(ingredientGroup.Key == IngredientType.Item ? "Items" : "Boissons")
+                    </MudText>
+                </MudListSubheader>
+
+                @foreach (var ingredient in ingredientGroup.OrderBy(i => i.Quantity))
                 {
-                    <MudTimelineItem Color="@instruction.GetInstructionColor()" Size="Size.Small">
+                    <MudListItem T="string" Icon="@ingredient.GetIngredientIcon()">
+                        <MudText>
+                            <strong>@ingredient.Name</strong>
+                            <MudChip T="string" Size="Size.Small" Color="Color.Info" Class="ml-2">
+                                x@(ingredient.Quantity) @ingredient.GetStackText()
+                            </MudChip>
+                        </MudText>
+                    </MudListItem>
+                }
+            }
+        </MudList>
+
+        <MudText Typo="Typo.h5" Class="my-3">
+            Revenus estimés:
+        </MudText>
+        <MudText Typo="Typo.body2" Color="Color.Secondary" Class="mb-4">
+            Le prix unitaire d'une bouteille est de @(OriginalRecipe.Value)Đ. Pour @DesiredQuantity unité(s), le revenu
+            total estimé est de @(OriginalRecipe.Value * DesiredQuantity)Đ.
+        </MudText>
+
+        <MudDivider Class="my-4"/>
+        @if (OriginalRecipe != null)
+        {
+            <MudText Typo="Typo.h6" Class="mb-3">
+                Instructions:
+            </MudText>
+
+            <MudTimeline TimelineOrientation="TimelineOrientation.Vertical" TimelinePosition="TimelinePosition.Left">
+                @foreach (var kvp in OriginalRecipe.GetInstructionsByRecipeName(IncludeSubRecipes))
+                {
+                    <MudTimelineItem Color="Color.Primary" Size="Size.Medium">
                         <ItemContent>
-                            <MudText Typo="Typo.body1">
-                                <strong>@instruction.GetInstructionTitle()</strong>
+                            <MudText Typo="Typo.h6" Style="font-weight: bold; text-decoration: underline;">
+                                Recette: @kvp.Key
                             </MudText>
-                            <MudText Typo="Typo.body2" Color="Color.Secondary">
-                                @instruction.GetInstructionDescription(kvp.Key)
+                        </ItemContent>
+                    </MudTimelineItem>
+                    foreach (var instruction in kvp.Value)
+                    {
+                        <MudTimelineItem Color="@instruction.GetInstructionColor()" Size="Size.Small">
+                            <ItemContent>
+                                <MudText Typo="Typo.body1">
+                                    <strong>@instruction.GetInstructionTitle()</strong>
+                                </MudText>
+                                <MudText Typo="Typo.body2" Color="Color.Secondary">
+                                    @instruction.GetInstructionDescription(kvp.Key)
+                                </MudText>
+                            </ItemContent>
+                        </MudTimelineItem>
+                    }
+
+                    <MudTimelineItem Color="Color.Success" Size="Size.Small">
+                        <ItemContent>
+                            <MudText Typo="Typo.body1" Style="font-weight: bold; text-decoration: underline;">
+                                Scellez les bouteilles !
                             </MudText>
                         </ItemContent>
                     </MudTimelineItem>
                 }
-
-                <MudTimelineItem Color="Color.Success" Size="Size.Small">
-                    <ItemContent>
-                        <MudText Typo="Typo.body1" Style="font-weight: bold; text-decoration: underline;">
-                            Scellez les bouteilles !
-                        </MudText>
-                    </ItemContent>
-                </MudTimelineItem>
-            }
-        </MudTimeline>
+            </MudTimeline>
+        }
     }
-}
-else if (HasCalculated && !Ingredients.Any())
-{
-    <MudAlert Severity="Severity.Warning">
-        Aucun ingrédient trouvé pour cette recette.
-    </MudAlert>
-}
+    else if (HasCalculated && !Ingredients.Any())
+    {
+        <MudAlert Severity="Severity.Warning">
+            Aucun ingrédient trouvé pour cette recette.
+        </MudAlert>
+    }
 </MudContainer>
 
 @code {
@@ -141,7 +146,7 @@ else if (HasCalculated && !Ingredients.Any())
     private string SelectedRecipeName { get; set; } = string.Empty;
     private int DesiredQuantity { get; set; } = 3;
     private bool IncludeSubRecipes { get; set; } = true;
-    
+
     private List<Ingredient> Ingredients { get; set; } = [];
     private Recipe? OriginalRecipe { get; set; }
     private int TimesToMake { get; set; }
@@ -153,6 +158,7 @@ else if (HasCalculated && !Ingredients.Any())
         {
             return;
         }
+
         CalculateIngredients();
     }
 
@@ -165,7 +171,7 @@ else if (HasCalculated && !Ingredients.Any())
     {
         CalculateIngredients();
     }
-    
+
     protected override async Task OnInitializedAsync()
     {
         await RecipesService.InitializeAsync();
@@ -178,7 +184,7 @@ else if (HasCalculated && !Ingredients.Any())
     {
         return Task.FromResult(string.IsNullOrEmpty(value) ? _allRecipeNames.AsEnumerable() : _allRecipeNames.Where(x => x.Contains(value, StringComparison.InvariantCultureIgnoreCase)));
     }
-    
+
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
