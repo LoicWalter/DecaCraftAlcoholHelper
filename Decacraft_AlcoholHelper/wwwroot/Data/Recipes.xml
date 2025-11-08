@@ -146,7 +146,7 @@
             <Ingredient Type="Item" Name="Orchidée" StackSize="64" Quantity="3" />
             <Ingredient Type="Item" Name="Lila" StackSize="64" Quantity="2" />
             <Ingredient Type="Item" Name="Pâquerette" StackSize="64" Quantity="1" />
-            <Ingredient Type="Item" Name="alliums" StackSize="64" Quantity="3" />
+            <Ingredient Type="Item" Name="Allium" StackSize="64" Quantity="3" />
             <Ingredient Type="Item" Name="Planturne" StackSize="64" Quantity="3" />
         </Ingredients>
         <Instructions>
