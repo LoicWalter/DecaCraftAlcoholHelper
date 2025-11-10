@@ -155,4 +155,17 @@
             <Instruction Type="Barrel" Name="Chêne" Time="13" />
         </Instructions>
     </Recipe>
+    <Recipe Id="15" Name="Absinthe" Value="1080">
+        <Ingredients>
+            <Ingredient Name="Fougère" Type="Item" StackSize="64" Quantity="4" />
+            <Ingredient Name="Blé" Type="Item" StackSize="64" Quantity="3" />
+            <Ingredient Name="Patate empoisonnée" Type="Item" StackSize="64" Quantity="2" />
+            <Ingredient Name="Émeraude" Type="Item" StackSize="64" Quantity="5" />
+        </Ingredients>
+        <Instructions>
+            <Instruction Type="Chaudron" Time="8" />
+            <Instruction Type="Alambic" Time="40" NumberOfCycles="4" />
+            <Instruction Type="Barrel" Name="Acajou" Time="14" />
+        </Instructions>
+    </Recipe>
 </Recipes>
