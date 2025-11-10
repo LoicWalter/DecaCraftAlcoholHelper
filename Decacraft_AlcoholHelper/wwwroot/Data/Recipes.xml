@@ -158,7 +158,7 @@
     <Recipe Id="15" Name="Absinthe" Value="1080">
         <Ingredients>
             <Ingredient Name="Fougère" Type="Item" StackSize="64" Quantity="4" />
-            <Ingredient Name="Blé" Type="Item" StackSize="64" Quantity="3" />
+            <Ingredient Name="Herbe" Type="Item" StackSize="64" Quantity="3" />
             <Ingredient Name="Patate empoisonnée" Type="Item" StackSize="64" Quantity="2" />
             <Ingredient Name="Émeraude" Type="Item" StackSize="64" Quantity="5" />
         </Ingredients>
