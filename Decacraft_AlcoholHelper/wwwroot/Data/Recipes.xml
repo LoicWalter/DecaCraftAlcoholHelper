@@ -171,7 +171,7 @@
     <Recipe Id="16" Name="Cognac" Value="1145">
         <Ingredients>
             <Ingredient Type="Boisson" Name="Vin" StackSize="1" Quantity="3" />
-            <Ingredient Type="Item" Name="Briques de résine" StackSize="64" Quantity="4" />
+            <Ingredient Type="Item" Name="Brique de résine (lingot)" StackSize="64" Quantity="4" />
         </Ingredients>
         <Instructions>
             <Instruction Type="Chaudron" Time="5" />
