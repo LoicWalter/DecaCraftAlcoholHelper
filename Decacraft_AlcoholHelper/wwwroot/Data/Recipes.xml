@@ -179,4 +179,22 @@
             <Instruction Type="Barrel" Name="Cerisier" Time="15" />
         </Instructions>
     </Recipe>
+    <Recipe Id="17" Name="Rhum" Value="1225">
+        <Ingredients>
+            <Ingredient Type="Item" Name="Canne à sucre" StackSize="64" Quantity="18" />
+            <Ingredient Type="Item" Name="Betterave" StackSize="64" Quantity="2" />
+            <Ingredient Type="Item" Name="Amas de résine" StackSize="64" Quantity="5" />
+        </Ingredients>
+        <Instructions>
+            <Instruction Type="Chaudron" Time="7" />
+            <Instruction Type="Alambic" Time="40" NumberOfCycles="3" />
+            <Instruction Type="Barrel" Name="Chêne" Time="16" />
+        </Instructions>
+    </Recipe>
+    <Recipe Id="18" Name="Whisky" Value="1150">
+    </Recipe>
+    <Recipe Id="19" Name="Tequila" Value="1305">
+    </Recipe>
+    <Recipe Id="20" Name="Vodka" Value="1425">
+    </Recipe>
 </Recipes>
