@@ -2,196 +2,206 @@
 <Recipes>
     <Recipe Id="1" Name="Infusion cerise" Value="50">
         <Ingredients>
-            <Ingredient Type="Item" Name="Feuilles de cerisier" StackSize="64" Quantity="2" />
-            <Ingredient Type="Item" Name="Fiole de miel" StackSize="16" Quantity="1" />
+            <Ingredient Type="Item" Name="Feuilles de cerisier" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Fiole de miel" StackSize="16" Quantity="1"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="5" />
+            <Instruction Type="Chaudron" Time="5"/>
         </Instructions>
     </Recipe>
     <Recipe Id="2" Name="Jus de pommes" Value="40">
         <Ingredients>
-            <Ingredient Type="Item" Name="Pomme" StackSize="64" Quantity="3" />
-            <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="1" />
+            <Ingredient Type="Item" Name="Pomme" StackSize="64" Quantity="3"/>
+            <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="1"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="3" />
-            <Instruction Type="Alambic" Time="15" NumberOfCycles="1" />
+            <Instruction Type="Chaudron" Time="3"/>
+            <Instruction Type="Alambic" Time="15" NumberOfCycles="1"/>
         </Instructions>
     </Recipe>
     <Recipe Id="3" Name="Multifruits" Value="40">
         <Ingredients>
-            <Ingredient Type="Item" Name="Pomme" StackSize="64" Quantity="1" />
-            <Ingredient Type="Item" Name="Carotte" StackSize="64" Quantity="1" />
-            <Ingredient Type="Item" Name="Pastèque" StackSize="64" Quantity="1" />
-            <Ingredient Type="Item" Name="Baie" StackSize="64" Quantity="1" />
+            <Ingredient Type="Item" Name="Pomme" StackSize="64" Quantity="1"/>
+            <Ingredient Type="Item" Name="Carotte" StackSize="64" Quantity="1"/>
+            <Ingredient Type="Item" Name="Pastèque" StackSize="64" Quantity="1"/>
+            <Ingredient Type="Item" Name="Baie" StackSize="64" Quantity="1"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="4" />
-            <Instruction Type="Barrel" Name="Bouleau" Time="2" />
+            <Instruction Type="Chaudron" Time="4"/>
+            <Instruction Type="Barrel" Name="Bouleau" Time="2"/>
         </Instructions>
     </Recipe>
     <Recipe Id="4" Name="Café" Value="50">
         <Ingredients>
-            <Ingredient Type="Item" Name="Cacao" StackSize="64" Quantity="12" />
+            <Ingredient Type="Item" Name="Cacao" StackSize="64" Quantity="12"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="5" />
-            <Instruction Type="Barrel" Name="Chêne" Time="1" />
+            <Instruction Type="Chaudron" Time="5"/>
+            <Instruction Type="Barrel" Name="Chêne" Time="1"/>
         </Instructions>
     </Recipe>
     <Recipe Id="5" Name="Kombucha" Value="170">
         <Ingredients>
-            <Ingredient Type="Boisson" Name="Infusion cerise" StackSize="1" Quantity="1" />
-            <Ingredient Type="Item" Name="Fiole de miel" StackSize="16" Quantity="1" />
-            <Ingredient Type="Item" Name="Baie" StackSize="64" Quantity="2" />
+            <Ingredient Type="Boisson" Name="Infusion cerise" StackSize="1" Quantity="1"/>
+            <Ingredient Type="Item" Name="Fiole de miel" StackSize="16" Quantity="1"/>
+            <Ingredient Type="Item" Name="Baie" StackSize="64" Quantity="2"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="3" />
-            <Instruction Type="Barrel" Name="Chêne noir" Time="3" />
+            <Instruction Type="Chaudron" Time="3"/>
+            <Instruction Type="Barrel" Name="Chêne noir" Time="3"/>
         </Instructions>
     </Recipe>
     <Recipe Id="6" Name="Cidre de pommes" Value="240">
         <Ingredients>
-            <Ingredient Type="Boisson" Name="Jus de pommes" StackSize="1" Quantity="1" />
-            <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="2" />
+            <Ingredient Type="Boisson" Name="Jus de pommes" StackSize="1" Quantity="1"/>
+            <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="2"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="3" />
-            <Instruction Type="Barrel" Name="Bouleau" Time="4" />
+            <Instruction Type="Chaudron" Time="3"/>
+            <Instruction Type="Barrel" Name="Bouleau" Time="4"/>
         </Instructions>
     </Recipe>
     <Recipe Id="7" Name="Bière" Value="345">
         <Ingredients>
-            <Ingredient Type="Item" Name="Blé" StackSize="64" Quantity="5" />
-            <Ingredient Type="Item" Name="Houstonie bleue" StackSize="64" Quantity="4" />
-            <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="1" />
+            <Ingredient Type="Item" Name="Blé" StackSize="64" Quantity="5"/>
+            <Ingredient Type="Item" Name="Houstonie bleue" StackSize="64" Quantity="4"/>
+            <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="1"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="5" />
-            <Instruction Type="Barrel" Name="Acacia" Time="6" />
+            <Instruction Type="Chaudron" Time="5"/>
+            <Instruction Type="Barrel" Name="Acacia" Time="6"/>
         </Instructions>
     </Recipe>
     <Recipe Id="8" Name="Hydromel" Value="450">
         <Ingredients>
-            <Ingredient Type="Item" Name="Fiole de miel" StackSize="16" Quantity="5" />
-            <Ingredient Type="Item" Name="Pissenlit" StackSize="64" Quantity="2" />
-            <Ingredient Type="Item" Name="Lingot d'or" StackSize="64" Quantity="1" />
+            <Ingredient Type="Item" Name="Fiole de miel" StackSize="16" Quantity="5"/>
+            <Ingredient Type="Item" Name="Pissenlit" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Lingot d'or" StackSize="64" Quantity="1"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="4" />
-            <Instruction Type="Barrel" Name="Acajou" Time="8" />
+            <Instruction Type="Chaudron" Time="4"/>
+            <Instruction Type="Barrel" Name="Acajou" Time="8"/>
         </Instructions>
     </Recipe>
     <Recipe Id="9" Name="Vin" Value="505">
         <Ingredients>
-            <Ingredient Type="Item" Name="Baie" StackSize="64" Quantity="16" />
-            <Ingredient Type="Item" Name="Membrane" StackSize="64" Quantity="5" />
-            <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="1" />
+            <Ingredient Type="Item" Name="Baie" StackSize="64" Quantity="16"/>
+            <Ingredient Type="Item" Name="Membrane" StackSize="64" Quantity="5"/>
+            <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="1"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="3" />
-            <Instruction Type="Barrel" Name="Bouleau" Time="9" />
+            <Instruction Type="Chaudron" Time="3"/>
+            <Instruction Type="Barrel" Name="Bouleau" Time="9"/>
         </Instructions>
     </Recipe>
     <Recipe Id="10" Name="Champagne" Value="615">
         <Ingredients>
-            <Ingredient Type="Item" Name="Baie Lumineuse" StackSize="64" Quantity="12" />
-            <Ingredient Type="Item" Name="Bloc d'or" StackSize="64" Quantity="1" />
+            <Ingredient Type="Item" Name="Baie Lumineuse" StackSize="64" Quantity="12"/>
+            <Ingredient Type="Item" Name="Bloc d'or" StackSize="64" Quantity="1"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="3" />
-            <Instruction Type="Barrel" Name="Acacia" Time="11" />
+            <Instruction Type="Chaudron" Time="3"/>
+            <Instruction Type="Barrel" Name="Acacia" Time="11"/>
         </Instructions>
     </Recipe>
     <Recipe Id="11" Name="Saké" Value="620">
         <Ingredients>
-            <Ingredient Type="Item" Name="Graine de citrouille" StackSize="64" Quantity="5" />
-            <Ingredient Type="Item" Name="Graine de torche-fleur" StackSize="64" Quantity="2" />
-            <Ingredient Type="Item" Name="Algue séchée" StackSize="64" Quantity="2" />
+            <Ingredient Type="Item" Name="Graine de citrouille" StackSize="64" Quantity="5"/>
+            <Ingredient Type="Item" Name="Graine de torche-fleur" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Algue séchée" StackSize="64" Quantity="2"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="6" />
-            <Instruction Type="Barrel" Name="Bambou" Time="11" />
+            <Instruction Type="Chaudron" Time="6"/>
+            <Instruction Type="Barrel" Name="Bambou" Time="11"/>
         </Instructions>
     </Recipe>
     <Recipe Id="12" Name="Gentiane" Value="510">
         <Ingredients>
-            <Ingredient Type="Item" Name="Pissenlit" StackSize="64" Quantity="9" />
-            <Ingredient Type="Item" Name="Gousse de planturne" StackSize="64" Quantity="2" />
-            <Ingredient Type="Item" Name="Racine suspendue" StackSize="64" Quantity="5" />
-            <Ingredient Type="Item" Name="Arbuste mort" StackSize="64" Quantity="3" />
+            <Ingredient Type="Item" Name="Pissenlit" StackSize="64" Quantity="9"/>
+            <Ingredient Type="Item" Name="Gousse de planturne" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Racine suspendue" StackSize="64" Quantity="5"/>
+            <Ingredient Type="Item" Name="Arbuste mort" StackSize="64" Quantity="3"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="5" />
-            <Instruction Type="Alambic" Time="30" NumberOfCycles="1" />
-            <Instruction Type="Barrel" Name="Chêne noir" Time="9" />
+            <Instruction Type="Chaudron" Time="5"/>
+            <Instruction Type="Alambic" Time="30" NumberOfCycles="1"/>
+            <Instruction Type="Barrel" Name="Chêne noir" Time="9"/>
         </Instructions>
     </Recipe>
     <Recipe Id="13" Name="Pastis" Value="570">
         <Ingredients>
-            <Ingredient Type="Item" Name="Tournesol" StackSize="64" Quantity="17" />
-            <Ingredient Type="Item" Name="Feuilles de sapin" StackSize="64" Quantity="2" />
-            <Ingredient Type="Item" Name="Cube de rayon de miel" StackSize="64" Quantity="4" />
+            <Ingredient Type="Item" Name="Tournesol" StackSize="64" Quantity="17"/>
+            <Ingredient Type="Item" Name="Feuilles de sapin" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Cube de rayon de miel" StackSize="64" Quantity="4"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="6" />
-            <Instruction Type="Alambic" Time="20" NumberOfCycles="2" />
-            <Instruction Type="Barrel" Name="Palétuvier" Time="10" />
+            <Instruction Type="Chaudron" Time="6"/>
+            <Instruction Type="Alambic" Time="20" NumberOfCycles="2"/>
+            <Instruction Type="Barrel" Name="Palétuvier" Time="10"/>
         </Instructions>
     </Recipe>
     <Recipe Id="14" Name="Chartreuse" Value="1000">
         <Ingredients>
-            <Ingredient Type="Item" Name="Coquelicot" StackSize="64" Quantity="2" />
-            <Ingredient Type="Item" Name="Orchidée" StackSize="64" Quantity="3" />
-            <Ingredient Type="Item" Name="Lila" StackSize="64" Quantity="2" />
-            <Ingredient Type="Item" Name="Pâquerette" StackSize="64" Quantity="1" />
-            <Ingredient Type="Item" Name="Allium" StackSize="64" Quantity="3" />
-            <Ingredient Type="Item" Name="Planturne" StackSize="64" Quantity="3" />
+            <Ingredient Type="Item" Name="Coquelicot" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Orchidée" StackSize="64" Quantity="3"/>
+            <Ingredient Type="Item" Name="Lila" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Pâquerette" StackSize="64" Quantity="1"/>
+            <Ingredient Type="Item" Name="Allium" StackSize="64" Quantity="3"/>
+            <Ingredient Type="Item" Name="Planturne" StackSize="64" Quantity="3"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="7" />
-            <Instruction Type="Alambic" Time="30" NumberOfCycles="3" />
-            <Instruction Type="Barrel" Name="Chêne" Time="13" />
+            <Instruction Type="Chaudron" Time="7"/>
+            <Instruction Type="Alambic" Time="30" NumberOfCycles="3"/>
+            <Instruction Type="Barrel" Name="Chêne" Time="13"/>
         </Instructions>
     </Recipe>
     <Recipe Id="15" Name="Absinthe" Value="1080">
         <Ingredients>
-            <Ingredient Name="Fougère" Type="Item" StackSize="64" Quantity="4" />
-            <Ingredient Name="Herbe" Type="Item" StackSize="64" Quantity="3" />
-            <Ingredient Name="Patate empoisonnée" Type="Item" StackSize="64" Quantity="2" />
-            <Ingredient Name="Émeraude" Type="Item" StackSize="64" Quantity="5" />
+            <Ingredient Name="Fougère" Type="Item" StackSize="64" Quantity="4"/>
+            <Ingredient Name="Herbe" Type="Item" StackSize="64" Quantity="3"/>
+            <Ingredient Name="Patate empoisonnée" Type="Item" StackSize="64" Quantity="2"/>
+            <Ingredient Name="Émeraude" Type="Item" StackSize="64" Quantity="5"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="8" />
-            <Instruction Type="Alambic" Time="40" NumberOfCycles="4" />
-            <Instruction Type="Barrel" Name="Acajou" Time="14" />
+            <Instruction Type="Chaudron" Time="8"/>
+            <Instruction Type="Alambic" Time="40" NumberOfCycles="4"/>
+            <Instruction Type="Barrel" Name="Acajou" Time="14"/>
         </Instructions>
     </Recipe>
     <Recipe Id="16" Name="Cognac" Value="1145">
         <Ingredients>
-            <Ingredient Type="Boisson" Name="Vin" StackSize="1" Quantity="3" />
-            <Ingredient Type="Item" Name="Brique de résine (lingot)" StackSize="64" Quantity="4" />
+            <Ingredient Type="Boisson" Name="Vin" StackSize="1" Quantity="3"/>
+            <Ingredient Type="Item" Name="Brique de résine (lingot)" StackSize="64" Quantity="4"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="5" />
-            <Instruction Type="Alambic" Time="30" NumberOfCycles="3" />
-            <Instruction Type="Barrel" Name="Cerisier" Time="15" />
+            <Instruction Type="Chaudron" Time="5"/>
+            <Instruction Type="Alambic" Time="30" NumberOfCycles="3"/>
+            <Instruction Type="Barrel" Name="Cerisier" Time="15"/>
         </Instructions>
     </Recipe>
     <Recipe Id="17" Name="Rhum" Value="1225">
         <Ingredients>
-            <Ingredient Type="Item" Name="Canne à sucre" StackSize="64" Quantity="18" />
-            <Ingredient Type="Item" Name="Betterave" StackSize="64" Quantity="2" />
-            <Ingredient Type="Item" Name="Amas de résine" StackSize="64" Quantity="5" />
+            <Ingredient Type="Item" Name="Canne à sucre" StackSize="64" Quantity="18"/>
+            <Ingredient Type="Item" Name="Betterave" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Amas de résine" StackSize="64" Quantity="5"/>
         </Ingredients>
         <Instructions>
-            <Instruction Type="Chaudron" Time="7" />
-            <Instruction Type="Alambic" Time="40" NumberOfCycles="3" />
-            <Instruction Type="Barrel" Name="Chêne" Time="16" />
+            <Instruction Type="Chaudron" Time="7"/>
+            <Instruction Type="Alambic" Time="40" NumberOfCycles="3"/>
+            <Instruction Type="Barrel" Name="Chêne" Time="16"/>
         </Instructions>
     </Recipe>
     <Recipe Id="18" Name="Whisky" Value="1150">
+        <Ingredients>
+            <Ingredient Type="Item" Name="Amas d'améthyste" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Sucre" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Botte de paille" StackSize="64" Quantity="5"/>
+        </Ingredients>
+        <Instructions>
+            <Instruction Type="Chaudron" Time="6"/>
+            <Instruction Type="Alambic" Time="30" NumberOfCycles="3"/>
+            <Instruction Type="Barrel" Name="Sapin" Time="15"/>
+        </Instructions>
     </Recipe>
     <Recipe Id="19" Name="Tequila" Value="1305">
     </Recipe>
