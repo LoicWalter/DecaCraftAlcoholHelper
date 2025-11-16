@@ -203,8 +203,18 @@
             <Instruction Type="Barrel" Name="Sapin" Time="15"/>
         </Instructions>
     </Recipe>
-    <Recipe Id="19" Name="Tequila" Value="1305">
+    <Recipe Id="19" Name="Vodka" Value="1305">
+        <Ingredients>
+            <Ingredient Type="Item" Name="Pomme de terre" StackSize="64" Quantity="15"/>
+            <Ingredient Type="Item" Name="Pomme de terre empoisonnée" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Betterave" StackSize="64" Quantity="8"/>
+        </Ingredients>
+        <Instructions>
+            <Instruction Type="Chaudron" Time="8"/>
+            <Instruction Type="Alambic" Time="30" NumberOfCycles="4"/>
+            <Instruction Type="Barrel" Name="Cerisier" Time="17"/>
+        </Instructions>
     </Recipe>
-    <Recipe Id="20" Name="Vodka" Value="1425">
+    <Recipe Id="20" Name="Tequila" Value="1425">
     </Recipe>
 </Recipes>
