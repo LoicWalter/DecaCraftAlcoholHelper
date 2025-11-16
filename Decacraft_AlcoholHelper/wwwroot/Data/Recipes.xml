@@ -216,5 +216,15 @@
         </Instructions>
     </Recipe>
     <Recipe Id="20" Name="Tequila" Value="1425">
+        <Ingredients>
+            <Ingredient Type="Item" Name="Fleur de cactus" StackSize="64" Quantity="15"/>
+            <Ingredient Type="Item" Name="Fleur de feu" StackSize="64" Quantity="2"/>
+            <Ingredient Type="Item" Name="Diamant" StackSize="64" Quantity="8"/>
+        </Ingredients>
+        <Instructions>
+            <Instruction Type="Chaudron" Time="7"/>
+            <Instruction Type="Alambic" Time="40" NumberOfCycles="4"/>
+            <Instruction Type="Barrel" Name="Palétuvier" Time="19"/>
+        </Instructions>
     </Recipe>
 </Recipes>
